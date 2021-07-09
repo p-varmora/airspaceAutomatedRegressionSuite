@@ -168,13 +168,14 @@ public class LoginPageTest extends BaseTestClass{
         loginPage.clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
-        Reporter.log("navigated back to login page...", true);
+        Reporter.log("navigated back to home page with browser back button..", true);
         webDriver.navigate().back();
 
         String homePageURl = "https://the-internet.herokuapp.com/login";
         String expectedHomePageURl = webDriver.getCurrentUrl();
         Assert.assertEquals(homePageURl,expectedHomePageURl);
 
+        Reporter.log("navigated forward to login page with bowser forward button..", true);
         webDriver.navigate().forward();
         validateThroughPageSource();
 
@@ -239,7 +240,7 @@ public class LoginPageTest extends BaseTestClass{
 
     /**
      * This method will fetch the page-source and
-     * print the message depends on page contain,
+     * print the page's error or succeeded message,
      */
     private void validateThroughPageSource() {
 
