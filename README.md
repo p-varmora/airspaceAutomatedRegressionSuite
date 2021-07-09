@@ -37,8 +37,21 @@ Automation-framework walk-through: (included java-doc in each class for better u
     7. validate_userLogin_when_invalidUsername_validPassword() - (priority = 7, groups = "functional")
 
 3. BaseTestClass -> This the main class - for intializing web-driver object, chrome-browser and  all the possible functionalities
+    1.initializingChormeBrowser()
+    2.navigateLoginPage()
+    3.closeChromeBrowser()
+    4.isPageLoaded()
+    5.clickOn()
+
 4. LoginPageClass -> This the login-page class with constructor - for login-page related web-elements and methods 
-5. LogoutPageClass -> This the logout-page class with constructor - for logout-page related web-elements and methods. 
+    Webelements : 1.userNameTextBox
+                  2.passwordTextBox
+                  3.loginButton
+
+    function() :  1.userLoginCredentials()
+
+6. LogoutPageClass -> This the logout-page class with constructor - for logout-page related web-elements and methods. 
+    WebElement : 1.logoutButton 
 
 Build-SUCCESS Logs: 
 --
