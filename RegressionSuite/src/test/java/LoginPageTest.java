@@ -145,7 +145,7 @@ public class LoginPageTest extends BaseTestClass{
 
     @Test (priority = 5, groups = "regression")
      /*
-    Test Scenario#5 : Verify that clicking on the browser back button after successful login should not take the User to log out mode
+    Test Scenario#5 : validate that clicking on the browser back button after successful login should not take the User to log out mode
     and clicking on the browser back button after successful logout should not take the User to a logged-in mode
     Note : but in this case its happening ......
 
