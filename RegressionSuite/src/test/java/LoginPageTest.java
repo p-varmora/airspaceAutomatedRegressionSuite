@@ -38,7 +38,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("enter valid credentials...", true);
         loginPage.userLoginCredentials("tomsmith", "SuperSecretPassword!");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         String userLoginURl = "https://the-internet.herokuapp.com/secure";
         String expectedUserLoginURl = webDriver.getCurrentUrl();
@@ -70,7 +70,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("enter invalid credentials...", true);
         loginPage.userLoginCredentials("parthvarmora", "1223");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
         closeChromeBrowser();
@@ -97,7 +97,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("keep blank username and password fields...", true);
         loginPage.userLoginCredentials("", "");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
         closeChromeBrowser();
@@ -130,7 +130,7 @@ public class LoginPageTest extends BaseTestClass{
 
         logoutPage = new LogoutPage();
         Reporter.log("click on logout button...", true);
-        logoutPage.clickOn(logoutPage.logoutButton, 5);
+        clickOn(logoutPage.logoutButton, 5);
         String homePageURl = "https://the-internet.herokuapp.com/login";
         String expectedHomePageURl = webDriver.getCurrentUrl();
         Assert.assertEquals(homePageURl,expectedHomePageURl);
@@ -145,8 +145,11 @@ public class LoginPageTest extends BaseTestClass{
 
     @Test (priority = 5, groups = "regression")
      /*
-    Test Scenario#5 : validate that User is able to logout with browser back button after successfully logged in
-    Automation Steps :
+    Test Scenario#5 : Verify that clicking on the browser back button after successful login should not take the User to log out mode
+    and clicking on the browser back button after successful logout should not take the User to a logged-in mode
+    Note : but in this case its happening ......
+
+     Automation Steps :
     1.Launch the web-browser and navigate to home-page
     2.Enter the user valid username and valid password
     3.Click on login button
@@ -165,7 +168,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("enter valid credentials...", true);
         loginPage.userLoginCredentials("tomsmith", "SuperSecretPassword!");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
         Reporter.log("navigated back to home page with browser back button..", true);
@@ -203,7 +206,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("enter valid-username and invalid-password...", true);
         loginPage.userLoginCredentials("tomsmith", "1234");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
         closeChromeBrowser();
@@ -230,7 +233,7 @@ public class LoginPageTest extends BaseTestClass{
         Reporter.log("enter invalid-username and valid-password...", true);
         loginPage.userLoginCredentials("parthvarmora", "SuperSecretPassword!");
         Reporter.log("click on login button...", true);
-        loginPage.clickOn(loginPage.loginButton, 5);
+        clickOn(loginPage.loginButton, 5);
 
         validateThroughPageSource();
         closeChromeBrowser();

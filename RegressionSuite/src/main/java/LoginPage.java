@@ -28,15 +28,4 @@ public class LoginPage extends BaseTestClass{
         userNameTextBox.sendKeys(userName);
         passwordTextBox.sendKeys(password);
     }
-
-    /**
-     * This method will click on web-element as long as the condition returns a truthy value,
-     * it will keep trying and waiting until the timeout of the wait is elapsed
-     */
-
-    public void clickOn(WebElement webElement, int timeout){
-        new WebDriverWait(webDriver, timeout).until(ExpectedConditions.elementToBeClickable(webElement));
-        webElement.click();
-    }
-
 }
